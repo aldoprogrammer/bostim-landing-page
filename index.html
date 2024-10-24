@@ -1,0 +1,877 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link rel="icon" href="./assets/logo.png" type="image/x-icon" />
+    <title>Boostim</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Manrope:wght@400;700&family=Plus+Jakarta+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style type="text/tailwindcss">
+      @layer utilities {
+        /* Custom Text Color: Primary Gray */
+        .color-primary-gray {
+          @apply text-[#9b9b9c];
+        }
+
+        .text-secondary-gray {
+          @apply text-[#878C91];
+        }
+
+        /* Custom Background Color: Primary Black */
+        .bg-primary-black {
+          @apply bg-[#010205];
+        }
+
+        /* Custom text color: Black */
+        .text-primary-black {
+          @apply text-[#010205];
+        }
+        /* Custom Background Color: Gray */
+        .bg-primary-gray {
+          @apply bg-[#C6C6C6];
+        }
+
+        /* Custom Background Color: Lime */
+        .bg-primary-lime {
+          @apply bg-[#99CF63];
+        }
+        /* Custom Border Color: Primary Black */
+        .border-primary-black {
+          @apply border-[#010205];
+        }
+
+        /* Custom Text Color: Primary Black */
+        .text-primary-black {
+          @apply text-[#010205];
+        }
+
+        /* Custom Text Color: Secondary Black */
+        .text-secondary-black {
+          @apply text-[#020407];
+        }
+
+        .faq-text-title {
+          @apply w-[95%] leading-[150%] text-[24px] text-primary-black font-semibold;
+        }
+
+        .faq-text-desc {
+          @apply text-secondary-gray text-[16px] leading-[180%];
+        }
+
+        /* Section */
+        .title-section-normal {
+          @apply text-3xl md:text-4xl font-bold text-primary-black;
+        }
+
+        .title-section-normal-white {
+          @apply text-3xl md:text-4xl font-semibold text-white leading-[130%];
+        }
+
+        /* Menu Icon Class */
+        .menu-icon {
+          @apply flex items-center gap-x-2 text-secondary-black lg:ml-[74px] hover:text-gray-900;
+        }
+
+        /* Font Family */
+        .font-manrope {
+          font-family: "Manrope", sans-serif;
+        }
+
+        .font-jakarta-sans {
+          font-family: "Plus Jakarta Sans", sans-serif;
+        }
+
+        .font-roboto {
+          font-family: "Roboto", sans-serif;
+        }
+
+        /* Shapes styling */
+        .small-circle-gray {
+          @apply w-10 h-10 bg-primary-gray rounded-full;
+        }
+        .chip {
+          @apply lg:px-[50px] lg:py-[13px] md:px-[10px] md:py-[10px] border border-white rounded-full ml-4 hover:bg-primary-lime hover:text-black hover:border-[#99CF63];
+        }
+        .chip-active {
+          @apply .chip bg-primary-lime;
+        }
+        .big-card-examples-real-world {
+          @apply w-[460px] h-[460px] bg-[#C3C3C3] rounded-lg p-4 flex flex-col justify-between border-[#8b8282] border-[9px];
+        }
+        .big-circle-card-examples-real-world {
+          @apply w-[460px] h-[460px] bg-[#C3C3C3] rounded-full flex items-center justify-center border-[#8b8282] border-[9px];
+        }
+        .normal-card {
+          @apply bg-white p-6 rounded-lg shadow-md;
+        }
+        .header-normal-card {
+          @apply flex items-center justify-between mb-4;
+        }
+        .subheading-normal-card {
+          @apply flex flex-row items-center justify-between w-full;
+        }
+        .normal-card-small-heading {
+          @apply text-secondary-gray font-medium text-[14px];
+        }
+        .normal-card-title {
+          @apply text-[26px] leading-[150%] text-primary-black font-semibold mb-4;
+        }
+        .normal-card-desc {
+          @apply text-secondary-gray w-4/5 text-[14px] leading-[160%] font-medium font-jakarta-sans mb-4;
+        }
+        .normal-card-button {
+          @apply flex w-[88px] h-[56px] px-[10px] py-[22px] items-center justify-center border hover:bg-primary-black hover:text-white border-primary-black text-[#000000] rounded-full;
+        }
+        .normal-card-button-active {
+          @apply flex w-[88px] h-[56px] px-[10px] py-[22px] items-center justify-center bg-primary-black text-white rounded-full;
+        }
+        .faq-question-container {
+          @apply border-b-[#000000] border border-t-0 border-x-0 py-4;
+        }
+        .faq-question-container-first-child {
+          @apply border-y-[#000000] border border-x-0 py-4;
+        }
+
+        /* Footer styling */
+        .icon-footer {
+          @apply text-[#192031] shadow-sm bg-[#e3e0e0] rounded-full w-[34px] h-[34px] hover:text-gray-800 flex justify-center items-center;
+        }
+
+        .footer-title {
+          @apply text-lg font-roboto text-[#192031] font-semibold mb-[40px];
+        }
+
+        .footer-link {
+          @apply text-[#9b9b9c] md:text-xl font-normal text-md font-roboto hover:text-gray-800;
+        }
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Header Start -->
+    <header
+      class="flex items-center justify-between py-6 px-6 max-w-6xl mx-auto"
+    >
+      <div class="flex items-center space-x-4 justify-between">
+        <div class="flex items-center">
+          <img
+            alt="Boostim logo"
+            class="mr-2"
+            height="33"
+            src="./assets/logo.png"
+            width="33"
+          />
+          <span
+            class="font-manrope text-secondary-black text-[24px] font-bold ml-[4px]"
+          >
+            boostim
+          </span>
+        </div>
+        <button class="hidden md:flex items-center gap-2 lg:hidden">
+          <i class="fas fa-bars"></i>
+          Menu
+        </button>
+        <nav class="hidden lg:flex space-x-[33px]">
+          <a class="menu-icon" href="#">
+            <span>Service</span>
+            <i class="fas fa-chevron-down"></i>
+          </a>
+          <a class="menu-icon" href="#">
+            <span>Agency</span>
+            <i class="fas fa-chevron-down"></i>
+          </a>
+          <a class="menu-icon" href="#">
+            <span>Case study</span>
+            <i class="fas fa-chevron-down ml-[8px]"></i>
+          </a>
+          <a class="menu-icon" href="#">
+            <span>Resources</span>
+            <i class="fas fa-chevron-down"></i>
+          </a>
+          <a class="menu-icon" href="#">
+            <span>Contact</span>
+          </a>
+        </nav>
+      </div>
+      <div class="flex items-center space-x-4">
+        <button
+          class="border border-primary-black text-primary-black md:px-[35px] md:py-[13px] lg:px-[15px] lg:py-[8px] px-[15px] py-[7px] rounded-full hover:bg-gray-100 md:flex hidden"
+        >
+          Get started
+        </button>
+        <button
+          class="text-white bg-primary-black p-[13px] rounded-full md:flex hidden"
+        >
+          <i class="fas fa-bell"></i>
+        </button>
+      </div>
+      <button class="md:hidden">
+        <i class="fas fa-bars"></i>
+        Menu
+      </button>
+    </header>
+    <!-- Header End -->
+    <main class="px-6 py-12">
+      <!-- Hero start -->
+      <section
+        class="flex flex-col lg:flex-row items-center lg:items-start lg:justify-between max-w-6xl mx-auto"
+      >
+        <section class="flex flex-col gap-4">
+          <div class="text-center lg:text-left lg:w-4/5 w-full">
+            <h1
+              class="text-3xl md:text-[72px] text-primary-black font-semibold font-jakarta-sans leading-tight"
+            >
+              Stay ahead of the curve with our forward-thinking
+            </h1>
+            <p class="text-secondary-gray mt-4">
+              An award-winning SEO agency with disciplines in digital marketing,
+              design, and website development. focused on understanding you.
+            </p>
+            <div
+              class="mt-8 flex flex-col md:flex-row justify-center lg:justify-start space-y-8 md:space-y-0 md:space-x-4 items-center lg:space-x-[56px]"
+            >
+              <button
+                class="bg-black text-white px-[32px] py-[22px] rounded-full flex items-center font-sans-jakarta hover:bg-gray-800 text-[FFFFFF] text-[16px] font-bold"
+              >
+                <span>Schedule Call</span>
+                <i class="fas fa-arrow-right ml-[42px]"></i>
+              </button>
+              <a
+                class="text-primary-black hover:text-gray-900 border-b border-primary-black text-[16px] font-semibold font-sans-jakarta"
+                href="#"
+                >View Case Study</a
+              >
+            </div>
+          </div>
+        </section>
+        <div class="mt-12 lg:mt-0 flex flex-col space-y-8 w-full">
+          <div class="flex items-center space-x-4">
+            <div class="relative xl:w-2/5">
+              <img
+                src="./assets/chart-half.png"
+                alt="Chart"
+                class="w-full h-full"
+              />
+              <img
+                src="./assets/icon-above-chart.png"
+                alt="Icon above chart"
+                class="absolute -top-10 right-0 w-24 h-24"
+              />
+            </div>
+            <div class="bg-[#F0F0F0] p-6 rounded-lg shadow-lg md:w-3/5">
+              <h2 class="text-6xl md:text-7xl font-bold text-black">230+</h2>
+              <p class="text-[#5C5D5F] text-[16px] leading-[150%] mt-2">
+                Some big companies that we work with, and trust us very much
+              </p>
+              <div class="relative mt-8">
+                <div class="bg-gray-300 h-2 w-full rounded-sm"></div>
+                <div
+                  class="bg-black h-2 w-7/12 rounded-sm absolute top-0 left-0"
+                ></div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-black text-white p-6 rounded-lg shadow-lg flex items-center space-x-4"
+          >
+            <div>
+              <h2 class="text-2xl font-bold">Drive More Traffic and Sales</h2>
+              <p class="mt-2">Drive more traffic and product sales</p>
+            </div>
+            <div class="flex items-end space-x-2">
+              <div class="bg-[#BAE289] w-6 h-12"></div>
+              <div class="bg-primary-lime w-6 h-16"></div>
+              <div class="bg-[#77B248] w-6 h-20"></div>
+            </div>
+          </div>
+          <section
+            class="mt-12 flex flex-col md:flex-row items-center gap-3 mx-auto lg:mx-0"
+          >
+            <p class="text-primary-black mr-[64px] font-semibold">
+              Trusted by the world's <br />
+              biggest brands
+            </p>
+            <div class="flex flex-row justify-center space-x-8 mt-4 gap-3">
+              <img
+                alt="Afterpay logo"
+                class="h-10 w-10"
+                height="40"
+                src="https://storage.googleapis.com/a1aa/image/bQSZ2Gh1Sf2cPCDWkzoA01U2Ep0AaoPsmLYTff6UAFxISZTnA.jpg"
+                width="100"
+              />
+              <img
+                alt="Basecamp logo"
+                class="h-10 w-10"
+                height="40"
+                src="https://storage.googleapis.com/a1aa/image/8rLf5ffIWib95JQkupZMxViCjmneJ7fxJu8BQ1q4nhiXIlNdC.jpg"
+                width="100"
+              />
+              <img
+                alt="Maze logo"
+                class="h-10 w-10"
+                height="40"
+                src="https://storage.googleapis.com/a1aa/image/9GhlTyCrmdJnAdZEzXCJ1ocaU7HKLFkB8B1XOXLARi7QKb6E.jpg"
+                width="100"
+              />
+            </div>
+          </section>
+        </div>
+      </section>
+      <!-- Hero end -->
+      <!-- Provide service -->
+      <section class="font-roboto">
+        <div class="max-w-7xl mx-auto py-16 md:px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-2 items-center text-left">
+            <div class="">
+              <h1 class="title-section-normal w-[90%]">
+                Provide the best service with out of the box ideas
+              </h1>
+            </div>
+            <div
+              class="mt-0 text-secondary-gray text-[16px] leading-[180%] max-w-2xl mx-auto"
+            >
+              <p>
+                we are a passionate team of digital marketing enthusiasts
+                dedicated to helping businesses succeed in the digital world.
+                With years of experience and a deep understanding of the
+                ever-evolving online landscape, we stay at the forefront of
+                industry trends and technologies.
+              </p>
+            </div>
+          </div>
+          <div
+            class="mx-auto py-16 md:px-0 sm:px-6 lg:px-0 flex md:flex-row flex-col gap-8 w-full"
+          >
+            <div class="bg-black text-white rounded-[30px] p-8 shadow-lg w-dul">
+              <div class="text-6xl text-[FFFFFF] font-bold">
+                920<span class="text-[99CF63]">+</span>
+              </div>
+              <div class="mt-2 text-secondary-gray text-[19px]">
+                Project finish with superbly
+              </div>
+              <div class="mt-6 flex space-x-2 items-center">
+                <div class="small-circle-gray"></div>
+                <div class="small-circle-gray"></div>
+                <div class="small-circle-gray"></div>
+                <div
+                  class="w-10 h-10 bg-primary-gray rounded-full flex items-center justify-center text-black font-bold"
+                ></div>
+                <span class="text-[38px] font-bold font-jakarta"> + </span>
+              </div>
+            </div>
+            <div
+              class="bg-gray-700/20 rounded-[30px] p-8 shadow-sm w-full flex items-center justify-between md:justify-center relative"
+            >
+              <div
+                class="md:text-2xl font-semibold leading-[140%] lg:text-[48px] text-[FFFFFF]"
+              >
+                HOW WE WORK
+              </div>
+              <div
+                class="absolute -bottom-1 -right-1 w-[80px] h-[80px] bg-[#FAFAFA] rounded-full flex items-center justify-center"
+              >
+                <div
+                  class="w-16 h-16 bg-[#99EA48] rounded-full flex items-center justify-center"
+                >
+                  <i class="fas fa-play text-black"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Provide service end -->
+      <!-- Real world example start -->
+      <section class="bg-black text-white rounded-[30px] overflow-hidden">
+        <div class="container mx-auto py-16 px-4">
+          <h1 class="title-section-normal-white text-center mb-8">
+            Real-world examples of how we have helped companies achieve their
+            marketing objectives.
+          </h1>
+          <div
+            class="md:flex justify-center space-x-4 mb-12 grid grid-cols-2 gap-3"
+          >
+            <button class="chip">All Work [20]</button>
+            <button
+              class="lg:px-[50px] lg:py-[13px] md:px-[10px] md:py-[10px] bg-primary-lime text-black rounded-full"
+            >
+              UI/UX Design [10]
+            </button>
+            <button class="chip">Digital Marketing [5]</button>
+            <button class="chip">Branding [5]</button>
+          </div>
+
+          <div class="flex justify-center space-x-8 ml-4 w-full">
+            <div
+              class="flex flex-col items-center xl:ml-[400px] lg:ml-[530px] md:ml-[830px] ml-[1200px]"
+            >
+              <div class="big-circle-card-examples-real-world">
+                <button
+                  class="bg-primary-lime text-black px-4 py-2 rounded-full"
+                >
+                  See Details
+                </button>
+              </div>
+            </div>
+
+            <div class="flex space-x-8">
+              <div class="big-card-examples-real-world">
+                <div class="text-sm text-gray-500">Ai Corporation. 2023</div>
+                <div class="text-lg">Ai Wave – Ai Chatbot Mobile App</div>
+              </div>
+              <div class="big-card-examples-real-world overflow-hidden">
+                <div class="text-sm text-gray-500">
+                  Lancer Corporation. 2023
+                </div>
+                <div class="text-lg">App Lancer – Freelance Network</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Real world example end -->
+      <!-- Quotes start -->
+      <section class="bg-[#FAFAFA] p-8 rounded-lg mx-auto mt-[85px]">
+        <p
+          class="md:text-[36px] text-lg leading-[160%] font-bold text-primary-black mb-6"
+        >
+          “ They thoroughly analyze our industry and target audience, allowing
+          them to develop customized campaigns that effectively reach and engage
+          our customers. Their creative ideas and cutting-edge techniques have
+          helped us stay ahead of the competition. ”
+        </p>
+        <div class="flex justify-between items-center">
+          <div class="flex items-center mt-8">
+            <div class="w-12 h-12 rounded-full bg-gray-300 mr-4"></div>
+            <div>
+              <p class="text-lg font-bold text-primary-black font-jakarta-sans">
+                Michael Kaizer
+              </p>
+              <p class="text-sm text-secondary-gray font-medium">
+                CEO of Basecamp Corp
+              </p>
+            </div>
+          </div>
+          <div
+            class="md:flex hidden items-center justify-between mt-8 gap-[38px]"
+          >
+            <button
+              class="w-10 h-10 flex items-center justify-center border border-black rounded-full px-[32px] py-[16px]"
+            >
+              <i class="fas fa-arrow-left text-lg text-gray-700"></i>
+            </button>
+            <p class="text-gray-500 text-sm">
+              <span class="text-primary-black">01</span>/05
+            </p>
+            <button
+              class="w-10 h-10 flex items-center justify-center bg-primary-black rounded-full px-[32px] py-[16px]"
+            >
+              <i class="fas fa-arrow-right text-lg text-white"></i>
+            </button>
+          </div>
+        </div>
+        <div
+          class="md:hidden flex items-center justify-between mt-12 gap-[38px]"
+        >
+          <button
+            class="w-10 h-10 flex items-center justify-center rounded-full px-[32px] py-[16px] border border-black"
+          >
+            <i class="fas fa-arrow-left text-lg text-gray-700"></i>
+          </button>
+          <p class="text-gray-500 text-sm">
+            <span class="text-primary-black">01</span>/05
+          </p>
+          <button
+            class="w-10 h-10 flex items-center justify-center bg-primary-black rounded-full px-[32px] py-[16px]"
+          >
+            <i class="fas fa-arrow-right text-lg text-white"></i>
+          </button>
+        </div>
+      </section>
+      <!-- Quotes end -->
+      <!-- Faq start -->
+      <section
+        class="bg-white flex items-center justify-center min-h-screen w-full"
+      >
+        <div
+          class="bg-white p-10 rounded-lg shadow-sm w-full grid grid-cols-1 lg:grid-cols-2"
+        >
+          <div class="flex flex-col gap-3">
+            <h1 class="title-section-normal mb-4">Digital Marketing FAQs</h1>
+            <p class="faq-text-desc mb-6">
+              As a leading digital marketing agency, we are dedicated to
+              providing comprehensive educational resources and answering
+              frequently asked questions to help our clients.
+            </p>
+            <div class="md:flex space-x-4 mb-8 grid grid-cols-1 gap-4">
+              <button
+                class="px-[28.5px] font-bold text-[16px] py-[17px] border border-black rounded-full text-black hover:bg-gray-200"
+              >
+                More Questions
+              </button>
+              <button
+                class="px-4 py-2 text-primary-black text-[16px] underline font-semibold"
+              >
+                Contact Us
+              </button>
+            </div>
+          </div>
+          <div class="space-y-4">
+            <div class="faq-question-container-first-child">
+              <div class="flex justify-between items-center">
+                <h2 class="faq-text-title">
+                  Why is digital marketing important for my business?
+                </h2>
+                <i class="fas fa-minus"></i>
+              </div>
+              <p class="faq-text-desc mt-2">
+                Digital marketing allows businesses to reach and engage with a
+                wider audience, generate leads, drive website traffic, and
+                increase brand visibility. It provides measurable results,
+                allows for targeted marketing efforts, and enables businesses to
+                adapt and optimize their strategies based on data and insights.
+              </p>
+            </div>
+            <div class="faq-question-container">
+              <div class="flex justify-between items-center">
+                <h2 class="faq-text-title">
+                  How can digital marketing help improve my website's
+                  visibility?
+                </h2>
+                <i class="fas fa-plus"></i>
+              </div>
+            </div>
+            <div class="faq-question-container">
+              <div class="flex justify-between items-center">
+                <h2 class="faq-text-title">
+                  How long does it take to see results from digital marketing
+                  efforts?
+                </h2>
+                <i class="fas fa-plus"></i>
+              </div>
+            </div>
+            <div class="faq-question-container">
+              <div class="flex justify-between items-center">
+                <h2 class="faq-text-title">
+                  How do you measure the success of digital marketing campaigns?
+                </h2>
+                <i class="fas fa-plus"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Faq ends -->
+      <!-- Seo Marekting start -->
+      <section class="bg-gray-50 text-gray-900">
+        <div class="max-w-7xl mx-auto px-4 py-16">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div>
+              <h1
+                class="title-section-normal font-jakarta-sans mb-4 leading-[130%]"
+              >
+                Digital Marketing & SEO Services That Grow Traffic & Increase
+                Revenue
+              </h1>
+            </div>
+            <div class="flex flex-col gap-2">
+              <p
+                class="text-secondary-gray w-4/5 text-[14px] leading-[160%] font-medium font-jakarta-sans mb-4"
+              >
+                We are the top digital marketing agency for branding corp. We
+                offer a full range of services to help clients improve their
+                search engine rankings and drive more traffic to their websites.
+              </p>
+              <button
+                class="border border-gray-900 text-gray-900 rounded-full hover:bg-gray-100 py-[17px] px-[34.5px] w-[156px] h-[56px]"
+              >
+                See more
+              </button>
+            </div>
+          </div>
+          <div class="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="normal-card">
+              <div class="header-normal-card">
+                <div class="subheading-normal-card">
+                  <span
+                    class="block w-3 h-3 bg-blue-500 rounded-full mr-2"
+                  ></span>
+                  <span class="normal-card-small-heading">5 min read</span>
+                </div>
+              </div>
+              <h2 class="normal-card-title">
+                How a Digital Marketing Agency Can Boost Your Business
+              </h2>
+              <div class="flex justify-between items-center gap-4 mt-[56px]">
+                <p class="normal-card-desc">
+                  We are the top digital marketing agency for branding corp. We
+                  offer a full rang engine ....
+                </p>
+                <a href="#" class="normal-card-button-active">
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+            <div class="normal-card">
+              <div class="header-normal-card">
+                <div class="subheading-normal-card">
+                  <span
+                    class="block w-3 h-3 bg-red-500 rounded-full mr-2"
+                  ></span>
+                  <span class="normal-card-small-heading">5 min read</span>
+                </div>
+              </div>
+              <h2 class="normal-card-title">
+                The Latest Trends and Strategies with a Digital Marketing Agency
+              </h2>
+              <div class="flex justify-between items-center gap-4 mt-[56px]">
+                <p class="normal-card-desc">
+                  Working with this digital marketing agency has been a true
+                  partnership. They have tak ...
+                </p>
+                <a href="#" class="normal-card-button">
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+            <div class="normal-card">
+              <div class="header-normal-card">
+                <div class="subheading-normal-card">
+                  <span
+                    class="block w-3 h-3 bg-purple-500 rounded-full mr-2"
+                  ></span>
+                  <span class="normal-card-small-heading">5 min read</span>
+                </div>
+              </div>
+              <h2 class="normal-card-title">
+                Maximizing ROI with the Expertise of a Digital Marketing Agency
+              </h2>
+              <div class="flex justify-between items-center gap-4 mt-[56px]">
+                <p class="normal-card-desc">
+                  What sets this digital marketing agency apart is their
+                  commitment to transparency an ....
+                </p>
+                <a href="#" class="normal-card-button">
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Seo Marekting end -->
+      <!-- Footer starts -->
+      <section class="text-gray-800">
+        <!-- Above footer section -->
+        <div
+          class="bg-gradient-to-r from-gray-800 to-black text-white py-20 rounded-[30px] flex flex-col md:flex-row px-[50px] justify-between items-center md:h-[235px] h-auto"
+        >
+          <h1
+            class="text-5xl font-semibold md:mb-6 mb-12 leading-[130%] lg:text-[60px] font-jakarta-sans"
+          >
+            Ready to work with us ?
+          </h1>
+          <button
+            class="bg-white text-black font-semibold py-[22px] px-[32px] rounded-full inline-flex items-center w-[219px] h-[56px] justify-between"
+          >
+            Get Started
+            <i class="fas fa-arrow-right ml-2"> </i>
+          </button>
+        </div>
+        <div class="container mx-auto py-16 mt-[54px]">
+          <div class="flex flex-wrap justify-between">
+            <!-- Left side footer -->
+            <div
+              class="w-full lg:w-[45%] mb-8 md:mb-0 flex flex-col gap-[30px]"
+            >
+              <div class="flex items-center mb-4">
+                <img
+                  alt="Boostim logo"
+                  class="mr-2"
+                  height="51"
+                  src="./assets/logo.png"
+                  width="51"
+                />
+                <span
+                  class="font-manrope text-secondary-black text-[37.09px] font-bold ml-[12.36px]"
+                >
+                  boostim
+                </span>
+              </div>
+              <p
+                class="color-primary-gray font-roboto text-[14px] mb-4 leading-[24px]"
+              >
+                We offers a comprehensive suite of digital marketing services
+                that cover all aspects of our online presence. From SEO and
+                social media marketing to content creation and PPC advertising,
+                they have the expertise and resources to handle our diverse
+                marketing needs.
+              </p>
+              <div class="flex space-x-[12px] items-center">
+                <a class="icon-footer" href="#">
+                  <i class="fab fa-facebook-f"> </i>
+                </a>
+
+                <a class="icon-footer" href="#">
+                  <i class="fab fa-twitter"> </i>
+                </a>
+                <a class="icon-footer" href="#">
+                  <i class="fab fa-linkedin-in"> </i>
+                </a>
+                <a class="icon-footer" href="#">
+                  <i class="fab fa-instagram"> </i>
+                </a>
+              </div>
+            </div>
+            <!-- Right side footer -->
+            <div
+              class="lg:w-[52%] grid grid-cols-1 md:grid-cols-3 mt-12 lg:mt-0"
+            >
+              <div class="w-full mb-8 md:mb-0">
+                <h3 class="footer-title">Navigation</h3>
+                <ul class="space-y-6">
+                  <li>
+                    <a
+                      class="color-primary-gray font-normal text-md font-roboto hover:text-gray-800"
+                      href="#"
+                    >
+                      Service
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="color-primary-gray font-normal text-md font-roboto hover:text-gray-800"
+                      href="#"
+                    >
+                      Agency
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="color-primary-gray font-normal text-md font-roboto hover:text-gray-800"
+                      href="#"
+                    >
+                      Case Study
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="color-primary-gray font-normal text-md font-roboto hover:text-gray-800"
+                      href="#"
+                    >
+                      Resource
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="color-primary-gray font-normal text-md font-roboto hover:text-gray-800"
+                      href="#"
+                    >
+                      Contact
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="w-full mb-8 md:mb-0">
+                <h3 class="footer-title">Licence</h3>
+                <ul class="space-y-6">
+                  <li>
+                    <a
+                      class="color-primary-gray font-normal text-md font-roboto hover:text-gray-800"
+                      href="#"
+                    >
+                      Privacy Policy
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="color-primary-gray font-normal text-md font-roboto hover:text-gray-800"
+                      href="#"
+                    >
+                      Copyright
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="color-primary-gray font-normal text-md font-roboto hover:text-gray-800"
+                      href="#"
+                    >
+                      Email Address
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="color-primary-gray font-normal text-md font-roboto hover:text-gray-800"
+                      href="#"
+                    >
+                      Resource
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="w-full mb-8 md:mb-0">
+                <h3 class="footer-title">Contact</h3>
+                <ul class="space-y-6">
+                  <li class="flex items-center gap-2 text-[#192031]">
+                    <i class="fas fa-phone-alt mr-2"> </i>
+                    <a
+                      class="color-primary-gray font-normal text-md font-roboto hover:text-gray-800"
+                      href="#"
+                    >
+                      (406) 555-0120
+                    </a>
+                  </li>
+                  <li class="flex items-center gap-2 text-[#192031]">
+                    <i class="fas fa-envelope mr-2"> </i>
+                    <a
+                      class="color-primary-gray font-normal text-md font-roboto hover:text-gray-800"
+                      href="#"
+                    >
+                      Hey@boostim.com
+                    </a>
+                  </li>
+                  <li class="flex items-start gap-2 text-[#192031]">
+                    <i class="fas fa-map-marker-alt mr-2"> </i>
+                    <a
+                      class="color-primary-gray font-normal text-md font-roboto hover:text-gray-800"
+                      href="#"
+                    >
+                      2972 Westheimer Rd. Santa Ana, Illinois 85486
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Footer ends -->
+    </main>
+  </body>
+</html>
